@@ -1,0 +1,15 @@
+server:
+  port: 9090
+
+resilience4j.bulkhead:
+  instances:
+    backendA:
+      maxConcurrentCalls: 6
+      maxWaitDuration: 3s
+
+resilience4j.thread-pool-bulkhead:
+  instances:
+    backendB:
+      maxThreadPoolSize: 2
+      coreThreadPoolSize: 2
+      queueCapacity: 2
